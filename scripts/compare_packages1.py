@@ -11,19 +11,14 @@ def compare_package_lists(working_file, nonworking_file, plain=False):
     nonworking_pkgs = read_packages(nonworking_file)
 
     only_in_working = sorted(working_pkgs - nonworking_pkgs)
-    only_in_nonworking = sorted(nonworking_pkgs - working_pkgs)
 
-    prefix = "" if plain else "✅ "
     if only_in_working:
-        print(f"\n{prefix}Packages present in working system but missing in nonworking:")
+        header = "Packages present in working system but missing in nonworking:"
+        print(f"\n{header}")
         for pkg in only_in_working:
             print(f"  {pkg}")
-
-#    if only_in_nonworking:
-#        prefix = "" if plain else "⚠️ "
-#        print(f"\n{prefix}Packages present in nonworking system but not in working:")
-#        for pkg in only_in_nonworking:
-#            print(f"  {pkg}")
+    else:
+        print("No missing packages from nonworking system.")
 
 if __name__ == "__main__":
     args = sys.argv[1:]
