@@ -17,11 +17,11 @@ def compare_package_lists(working_file, nonworking_file):
     for pkg in only_in_working:
         print(f"  {pkg}")
 
-    print(f"\n⚠️ Packages present in nonworking system but not in working:")
-    for pkg in only_in_nonworking:
-        print(f"  {pkg}")
+#    print(f"\n⚠️ Packages present in nonworking system but not in working:")
+#    for pkg in only_in_nonworking:
+#        print(f"  {pkg}")
 
-    print(f"\n📦 Common packages: {len(working_pkgs & nonworking_pkgs)}")
+#    print(f"\n📦 Common packages: {len(working_pkgs & nonworking_pkgs)}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
